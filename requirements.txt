@@ -1,0 +1,4 @@
+numpy>=1.26.0
+sounddevice>=0.4.6
+websockets>=12.0
+colorama>=0.4.6
