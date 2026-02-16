@@ -1,0 +1,15 @@
+[Unit]
+Description=Terminal Voice Chat Relay Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/voicechat
+Environment=VOICECHAT_ROOM_TOKEN=change-me
+ExecStart=/home/ubuntu/voicechat/.venv/bin/python -m voicechat.server --host 0.0.0.0 --ws-port 8765 --udp-port 9999
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
